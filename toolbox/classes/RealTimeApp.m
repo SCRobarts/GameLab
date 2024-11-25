@@ -5,9 +5,9 @@ classdef RealTimeApp < handle
 	%	Sebastian C. Robarts 2024 - sebrobarts@gmail.com
 	properties
 		Name = "Game"
-		TargetFPS = 20;
+		TargetFPS = 30;
 		GridStep = 1;
-		GridScale = [25 25];
+		GridScale = [10 10];
 		% StartFcnHdl		function_handle
 		MainLoopFcn		function_handle		
 		KeyPressFcn		function_handle
@@ -52,6 +52,7 @@ classdef RealTimeApp < handle
 
 		function makeWindow(obj)
 			obj.Window = figure('MenuBar','none','color',[0.1 0.1 0.1],'Visible','off');
+			obj.Window.Renderer = 'painters';
 			obj.Window.NumberTitle = 'off';
 			obj.Window.Name = obj.Name;
 			obj.Window.KeyPressFcn = @obj.commonInput;

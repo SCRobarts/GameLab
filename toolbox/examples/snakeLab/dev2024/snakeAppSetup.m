@@ -12,7 +12,6 @@ end
 
 %% Create App and Entities
 snakeApp = RealTimeApp;
-snakeApp.TargetFPS = 120;
 snake = SnakeEntity;
 food = FoodEntity;
 snakeApp.KeyPressFcn = @(press) snakeInput(snake,press);
