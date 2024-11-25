@@ -51,7 +51,7 @@ classdef RealTimeApp < handle
 		end
 
 		function makeWindow(obj)
-			obj.Window = figure('MenuBar','none','color',[0.1 0.1 0.1]);
+			obj.Window = figure('MenuBar','none','color',[0.1 0.1 0.1],'Visible','off');
 			obj.Window.NumberTitle = 'off';
 			obj.Window.Name = obj.Name;
 			obj.Window.KeyPressFcn = @obj.commonInput;
