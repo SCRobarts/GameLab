@@ -64,6 +64,15 @@ classdef GameEntity < matlab.mixin.Copyable & matlab.mixin.Heterogeneous & dynam
 			end
 		end
 
+		function boundPosition(obj)
+			incN = "includemissing";
+			xlims = [-1 1]; ylims = [-1 1];
+			x = obj.Position(:,1); y = obj.Position(:,2);
+			x = min(max(x,xlims(1),incN),xlims(2),incN);
+			y = min(max(y,ylims(1),incN),ylims(2),incN);
+			obj.Position = [x,y];
+		end
+		
 		% function update(obj)
 		% 	obj.updatePosition
 		% 	obj.calcXY;
