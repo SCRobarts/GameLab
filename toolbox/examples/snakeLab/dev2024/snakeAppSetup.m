@@ -14,7 +14,6 @@ end
 snakeApp = RealTimeApp;
 snakeApp.TargetFPS = 120;
 snake = SnakeEntity;
-% snake.grow(5);
 food = FoodEntity;
 snakeApp.KeyPressFcn = @(press) snakeInput(snake,press);
 snake.Speed = 1;
@@ -22,6 +21,7 @@ snakeApp.Entities = snake;
 snakeApp.Entities = [snakeApp.Entities,food];
 snakeApp.MainLoopFcn = @() mainLoop(snakeApp,snake,food);
 
+% snake.grow(5);
 % food2 = FoodEntity;
 % snakeApp.Entities(3) = food2;
 % food2.XY = [-5,-5];
@@ -67,7 +67,6 @@ end
 
 %% Launch
 snakeApp.initialise;
-% snakeApp.Pause = 1;
 snakeApp.start;
 
 %% Main Loop Function
