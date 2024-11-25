@@ -7,7 +7,7 @@
     <param.summary>Introduction to OOP fundamentals via games in MATLAB</param.summary>
     <param.description />
     <param.screenshot>${PROJECT_ROOT}\images\snakeLab_screenshot.png</param.screenshot>
-    <param.version>0.1.1</param.version>
+    <param.version>0.1.2</param.version>
     <param.output>${PROJECT_ROOT}\GameLab.mltbx</param.output>
     <param.products.name />
     <param.products.id />

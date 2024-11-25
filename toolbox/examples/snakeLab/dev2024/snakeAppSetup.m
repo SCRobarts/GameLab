@@ -28,6 +28,23 @@ snakeApp.MainLoopFcn = @() mainLoop(snakeApp,snake,food);
 % snake.Length = 5;
 % snakeApp.Speed = 1;
 
+
+%% Launch
+snakeApp.initialise;
+snakeApp.start;
+
+%% Main Loop Function
+function mainLoop(app,snake,food)
+	if snake.Dead && ~app.Pause
+		snakeAppSetup;
+	else
+		hitTest(snake,food)
+		if snake.Dead
+			app.Pause = 1;
+		end
+	end
+end
+
 %% App Specific Functionality
 function snakeInput(snake,press)
 	if ~snake.ActionQueued
@@ -62,21 +79,5 @@ res = snake.Resolution;
 		plot(segXY(1),segXY(2),'rh','MarkerSize',12,'MarkerFaceColor','r');
 		plot(segXY(1),segXY(2),'rh','MarkerSize',9,'MarkerFaceColor','y');
 		snake.kill;
-	end
-end
-
-%% Launch
-snakeApp.initialise;
-snakeApp.start;
-
-%% Main Loop Function
-function mainLoop(app,snake,food)
-	if snake.Dead && ~app.Pause
-		snakeAppSetup;
-	else
-		hitTest(snake,food)
-		if snake.Dead
-			app.Pause = 1;
-		end
 	end
 end
