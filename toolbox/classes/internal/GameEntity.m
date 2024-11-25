@@ -20,7 +20,7 @@ classdef GameEntity < matlab.mixin.Copyable & matlab.mixin.Heterogeneous & dynam
 		Visible = 0;
 		ActionQueued = 0;
 	end
-	properties(Transient,WeakHandle)
+	properties(Transient) % WeakHandle
 		Parent RealTimeApp
 		Graphic	matlab.graphics.Graphics
 	end

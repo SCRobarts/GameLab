@@ -13,7 +13,7 @@ classdef RealTimeApp < handle
 		KeyPressFcn		function_handle
 		% StopFcnHdl		function_handle
 	end
-	properties(WeakHandle)
+	properties %(WeakHandle)
 		Entities	GameEntity
 	end
 	properties (Transient)
