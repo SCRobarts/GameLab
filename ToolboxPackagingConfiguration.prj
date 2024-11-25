@@ -1,9 +1,9 @@
 <deployment-project plugin="plugin.toolbox" plugin-version="1.0">
-  <configuration file="D:\MATLAB\GameLab\ToolboxPackagingConfiguration.prj" location="D:\MATLAB\GameLab" name="ToolboxPackagingConfiguration" target="target.toolbox" target-name="Package Toolbox">
+  <configuration file="C:\GameLab\ToolboxPackagingConfiguration.prj" location="C:\GameLab" name="ToolboxPackagingConfiguration" target="target.toolbox" target-name="Package Toolbox">
     <param.appname>GameLab</param.appname>
-    <param.authnamewatermark>Sebastian C. Robarts</param.authnamewatermark>
-    <param.email>sebrobarts@gmail.com</param.email>
-    <param.company>McCracken Lab, Heriot-Watt University</param.company>
+    <param.authnamewatermark />
+    <param.email />
+    <param.company />
     <param.summary>Introduction to OOP fundamentals via games in MATLAB</param.summary>
     <param.description />
     <param.screenshot>${PROJECT_ROOT}\images\snakeLab_screenshot.png</param.screenshot>
@@ -92,25 +92,12 @@
     <fileset.depfun.excluded />
     <fileset.package />
     <build-deliverables>
-      <file location="${PROJECT_ROOT}" name="GameLab.mltbx" optional="false">D:\MATLAB\GameLab\GameLab.mltbx</file>
+      <file location="${PROJECT_ROOT}" name="GameLab.mltbx" optional="false">C:\GameLab\GameLab.mltbx</file>
     </build-deliverables>
     <workflow />
     <matlab>
-      <root>D:\MATLAB\R2024b</root>
-      <toolboxes>
-        <toolbox name="matlabcoder" />
-        <toolbox name="gpucoder" />
-      </toolboxes>
-      <toolbox>
-        <matlabcoder>
-          <enabled>true</enabled>
-        </matlabcoder>
-      </toolbox>
-      <toolbox>
-        <gpucoder>
-          <enabled>true</enabled>
-        </gpucoder>
-      </toolbox>
+      <root>C:\Program Files\MATLAB\R2023a</root>
+      <toolboxes />
     </matlab>
     <platform>
       <unix>false</unix>
