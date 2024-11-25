@@ -8,7 +8,25 @@ newApp.GridStep = 0.5;
 
 %% Initialise local variables and objects which will be referenced in app functions
 staticVar = 'foo';	% static variables can be used to pass fixed values to the functions
+userObj = createObj("User",'y');	% handle objects store data across workspaces	
+autoObj = createObj("Auto",'r',[0.5,-0.9]);
+userObj.Speed = 0.05;
+autoObj.Speed = 0.1;
+autoObj.AutoMove = 1;
 
+%% Add custom objects to the app
+objList = [userObj,autoObj];
+newApp.Entities = objList;
+
+%% Set the core app functions
+newApp.KeyPressFcn = @(press) keyInput(press,staticVar,userObj);
+newApp.MainLoopFcn = @() mainLoop(newApp,objList);
+
+%% Initialise and start the app
+newApp.initialise;
+newApp.start;
+
+%% Local functions
 function myObj = createObj(name,colour,relativePosition)
 arguments
 	name
@@ -22,17 +40,6 @@ end
 	myObj.PlotOptions = {'o','MarkerSize',12,'MarkerEdgeColor','w','MarkerFaceColor',colour};
 end
 
-userObj = createObj("User",'y');	% handle objects store data across workspaces	
-autoObj = createObj("Auto",'r',[0.5,-0.9]);
-userObj.Speed = 0.05;
-autoObj.Speed = 0.1;
-autoObj.AutoMove = 1;
-
-%% Add custom objects to the app
-objList = [userObj,autoObj];
-newApp.Entities = objList;
-
-%% Set the core app functions
 function keyInput(press,varargin)
 obj = varargin{2};
 obj.WillStep = 1;
@@ -58,14 +65,6 @@ function mainLoop(app,objList)
 	end
 end
 
-newApp.KeyPressFcn = @(press) keyInput(press,staticVar,userObj);
-newApp.MainLoopFcn = @() mainLoop(newApp,objList);
-
-%% Initialise and start the app
-newApp.initialise;
-newApp.start;
-
-%% Local functions
 function updateLocalObj(obj,val)
 	obj.customProperty = val;
 end
